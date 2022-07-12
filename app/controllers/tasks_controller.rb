@@ -33,6 +33,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
+    # para colocar permissao somete para pegar as infos que realmente queremos, e nao aparecer nenhuma informcao desnecessaria
     params.require(:task).permit(:title, :details, :completed)
   end
 

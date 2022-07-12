@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   # patch '/tasks/:id', to: 'tasks#update'
   # delete 'tasks/:id', to: 'tasks#destroy'
 
-  resources :tasks
+  resources :tasks # create the routes automatically, you can see the routes run rails routs in the terminal
 end

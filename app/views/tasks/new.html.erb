@@ -1,5 +1,11 @@
+<div class="container my-5 fs-4">
 <h1>New task</h1>
 <%# create a conditionl to not appear the completed %>
-<%= render "form", task: @task %>
+<div class="form py-3">
+  <%= render "form", task: @task %>
+</div>
 
- <%= link_to "Back to list", tasks_path %>
+<%= link_to tasks_path, class:"text-decoration-none fs-5" do %>
+  <i class="fa fa-undo" ></i> Back to list
+<% end %>
+</div>

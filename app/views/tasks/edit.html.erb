@@ -1,5 +1,9 @@
+<div class="container my-5 fs-4">
 <h1>Edit task</h1>
 
 <%= render "form", task: @task %>
 
-<%= link_to "Back to list", tasks_path %>
+<%= link_to tasks_path, class:"text-decoration-none fs-5" do %>
+  <i class="fa fa-undo" ></i> Back to list
+<% end %>
+</div>

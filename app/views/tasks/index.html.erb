@@ -1,14 +1,28 @@
-<div class="container">
+<div class="container my-5 fs-4">
   <h1>My Tasks</h1>
 
-  <% @tasks.each do |task| %>
-    <p><%=link_to task.title, task_path(task)%>
-    <%= link_to "delete",
-            task_path(task),
-            method: :delete,
-            data: { confirm: "Delete #{task.title}?" } %></p>
-  <% end %>
-  <%= link_to "+Add a new task", new_task_path %>
+  <ul id="tasks">
+    <% @tasks.each do |task| %>
+      <li class="fs-4">
+        <% if task.completed %>
+          <i class="fa fa-check-square-o" aria-hidden="true"></i>
+        <% else %>
+          <i class="fa fa-square-o" ></i>
+        <% end %>
+        <%# fazer o link desta maneira e usando o do possibilita adicionar o Awesome icon para clicar nele e ir a outra page %>
+        <%=link_to task.title, task_path(task.id), class: "text-decoration-none"%>
+        <%= link_to task_path(task),
+                method: :delete,
+                data: { confirm: "Delete #{task.title}?" } do %>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                <% end %>
+      </li>
+    <% end %>
+  </ul>
 
+  <hr>
+  <%= link_to new_task_path, class:"text-decoration-none fs-5" do %>
+    <i class="fa fa-plus" aria-hidden="true"></i> Add a new task
+  <% end %>
 
 </div>
